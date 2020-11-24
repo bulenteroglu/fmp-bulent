@@ -4,8 +4,19 @@ import Table from './components/Table';
 export default function App() {
   const [inputNumber, setInputNumber] = useState(50);
 
+  function isPrime(num) {
+    for (let i = 2, s = Math.sqrt(num); i <= s; i++)
+      if (num % i === 0) return false;
+    return num > 1;
+  }
+
   function onSumbit(e) {
     e.preventDefault();
+    for (let i = 0; i < inputNumber; i++) {
+      if (isPrime(i)) {
+        console.log(i);
+      }
+    }
   }
 
   return (
@@ -18,7 +29,7 @@ export default function App() {
         />
         <button>Click me</button>
       </form>
-      <Table n={inputNumber} />
+      {inputNumber ? <Table n={inputNumber} /> : null}
     </div>
   );
 }
