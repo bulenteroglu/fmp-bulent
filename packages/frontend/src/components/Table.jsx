@@ -5,7 +5,7 @@ export default function Table({ n }) {
 
   return (
     <div>
-      <div>{n}</div>
+      <div></div>
     </div>
   );
 }

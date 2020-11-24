@@ -3,6 +3,7 @@ import Table from './components/Table';
 
 export default function App() {
   const [inputNumber, setInputNumber] = useState(50);
+  const [grid, setGrid] = useState([]);
 
   function isPrime(num) {
     for (let i = 2, s = Math.sqrt(num); i <= s; i++)
@@ -14,10 +15,11 @@ export default function App() {
     e.preventDefault();
     for (let i = 0; i < inputNumber; i++) {
       if (isPrime(i)) {
-        console.log(i);
       }
     }
   }
+
+  console.log(grid);
 
   return (
     <div>
