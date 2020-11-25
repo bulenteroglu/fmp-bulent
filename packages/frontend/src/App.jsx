@@ -45,9 +45,9 @@ export default function App() {
           placeholder='Enter number'
           onChange={(e) => setInputNumber(parseInt(e.target.value, 10))}
         />
-        <button>Click me</button>
+        <button>multiply them prime numbers...</button>
       </form>
-      <Table rows={primeNumbers} cols={primeNumbers} />
+      <Table rows={primeNumbers} cols={primeNumbers} n={inputNumber} />
     </div>
   );
 }
