@@ -1,20 +1,21 @@
 import React from 'react';
 
-export default function Table({ grid }) {
-  if (!grid) return null;
+export default function Table({ cols, rows }) {
+  if (!cols) return null;
 
-  console.log(grid);
   return (
-    <div>
-      {grid.map((rows, i) => (
-        <>
-          {i === 0 ? (
-            <p style={{ marginLeft: '1rem' }}>{rows}</p>
-          ) : (
-            <p key={i}>{rows}</p>
-          )}
-        </>
+    <table>
+      <tr>
+        <th>x</th>
+        {cols.map((col, i) => (
+          <th key={i}>{col}</th>
+        ))}
+      </tr>
+      {rows.map((row, i) => (
+        <tr key={i}>
+          <td>{row}</td>
+        </tr>
       ))}
-    </div>
+    </table>
   );
 }
