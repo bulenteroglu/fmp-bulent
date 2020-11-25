@@ -13,13 +13,22 @@ export default function App() {
 
   function onSumbit(e) {
     e.preventDefault();
-    for (let i = 0; i < inputNumber; i++) {
-      if (isPrime(i)) {
-      }
-    }
+    generatePrimeNumbers(inputNumber);
   }
 
-  console.log(grid);
+  function generatePrimeNumbers(n) {
+    const primeNumber = [];
+    let i = 0;
+
+    while (primeNumber.length < n) {
+      if (isPrime(i)) {
+        primeNumber.push(i);
+      }
+      i++;
+    }
+
+    console.log(primeNumber);
+  }
 
   return (
     <div>
@@ -31,7 +40,7 @@ export default function App() {
         />
         <button>Click me</button>
       </form>
-      {inputNumber ? <Table n={inputNumber} /> : null}
+      {inputNumber ? <Table grid={grid} /> : null}
     </div>
   );
 }
