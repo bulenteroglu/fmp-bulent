@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Table({ cols, rows }) {
+export default function Table({ cols }) {
   if (!cols) return null;
 
-  function handleTableData(data) {
+  function multiplyTable(data) {
     let product = [];
     let multiply = [];
 
@@ -17,7 +17,7 @@ export default function Table({ cols, rows }) {
   }
 
   function displayTable(data) {
-    return handleTableData(data);
+    return multiplyTable(data);
   }
 
   return (
